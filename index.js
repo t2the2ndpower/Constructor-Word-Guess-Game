@@ -14,4 +14,7 @@ var words = [
     "five"
 ];
 
+console.log("this is the index.js file");
+
+
 console.log(words[0]);

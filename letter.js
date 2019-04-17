@@ -45,4 +45,6 @@ function Ltr(char, isGuessed) {
     }
 };
 
-module.exports = LETTER;
+console.log("this is the letter.js file");
+
+module.exports = Ltr;

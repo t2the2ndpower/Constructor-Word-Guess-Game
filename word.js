@@ -12,5 +12,7 @@ function Wrd(wordChars, wordStg ) {
     this.wordStg = wordStg;
 };
 
+console.log("this is the word.js file");
 
-module.exports = WORD;
+
+module.exports = Wrd;
