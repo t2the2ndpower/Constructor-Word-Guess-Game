@@ -13,4 +13,4 @@ function Wrd(wordChars, wordStg ) {
 };
 
 
-module.exports = word;
+module.exports = WORD;

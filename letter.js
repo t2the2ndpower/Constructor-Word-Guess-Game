@@ -45,4 +45,4 @@ function Ltr(char, isGuessed) {
     }
 };
 
-module.exports = letter;
+module.exports = LETTER;
