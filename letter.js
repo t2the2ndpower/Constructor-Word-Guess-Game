@@ -3,6 +3,8 @@ console.log(args);
 
 var fs = require("fs");
 
+var char = process.argv[2];
+
 function Ltr(char, isGuessed) {
     this.char = char;
     this.isGuessed = isGuessed;
@@ -45,6 +47,7 @@ function Ltr(char, isGuessed) {
     }
 };
 
+Ltr(char);
 console.log("this is the letter.js file");
 
 module.exports = Ltr;
