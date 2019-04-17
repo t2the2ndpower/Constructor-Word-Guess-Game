@@ -3,44 +3,46 @@ console.log(args);
 
 var fs = require("fs");
 
-function Ltr(letter, isGuessed){
-    this.letter = letter,
-    this.isGuessed = isGuessed,
+function Ltr(char, isGuessed) {
+    this.char = char;
+    this.isGuessed = isGuessed;
 
-    this.printMatch = function(){
-        if(isGuessed === true){
-            console.log(Ltr.letter);
-            fs.appendFile("hangman.txt", ltr.letter,
-            
-            function(err){
-                if(err){
-                  console.log(err);
-                } else{
-                  console.log("Content Added!");
-                }
-              })
-            
+    this.printMatch = function () {
+        if (isGuessed === true) {
+            console.log(Ltr.char);
+            fs.appendFile("hangman.txt", ltr.char,
+
+                function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Letter Added!");
+                    }
+                })
+
         } else {
             console.log("__");
 
-            fs.appendFile("hangman.txt", "___",
-            
-            function(err){
-                if(err){
-                  console.log(err);
-                } else{
-                  console.log("Content Added!");
-                }
-              })
-        }
-    },
+            fs.appendFile("hangman.txt", "__",
 
-    this.isMatch = function(x){
-        if(x == Ltr.letter){
+                function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("Yeah, not so much");
+                    }
+                })
+        }
+    };
+
+    this.isMatch = function (x) {
+        if (x == Ltr.char) {
             this.isGuessed = true;
 
-        } else{
+        } else {
             this.isGuessed = false;
         }
     }
-}
+};
+
+module.exports = letter;
