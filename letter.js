@@ -1,44 +1,45 @@
-args = process.argv;
-console.log(args);
+// args = process.argv;
+// console.log(args);
 
 var fs = require("fs");
 
 var char = process.argv[2];
 
-function Ltr(char, isGuessed) {
+function Ltr(char) {
+    this.word = 'dave'.split('')
     this.char = char;
-    this.isGuessed = isGuessed;
 
     this.printMatch = function () {
-        if (isGuessed === true) {
-            console.log(Ltr.char);
-            fs.appendFile("hangman.txt", ltr.char,
+        
+        if (this.word.indexOf(char) !== -1) {
+            console.log(this.word[this.word.indexOf(char)]);
+            // fs.appendFile("hangman.txt", this.char,
 
-                function (err) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log("Letter Added!");
-                    }
-                })
+            //     function (err) {
+            //         if (err) {
+            //             console.log(err);
+            //         } else {
+            //             console.log("Letter Added!");
+            //         }
+            //     })
 
         } else {
-            console.log("__");
+            console.log("_");
 
-            fs.appendFile("hangman.txt", "__",
+            // fs.appendFile("hangman.txt", "__",
 
-                function (err) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log("Yeah, not so much");
-                    }
-                })
+            //     function (err) {
+            //         if (err) {
+            //             console.log(err);
+            //         } else {
+            //             console.log("Yeah, not so much");
+            //         }
+            //     })
         }
     };
 
     this.isMatch = function (x) {
-        if (x == Ltr.char) {
+        if (x == this.char) {
             this.isGuessed = true;
 
         } else {
@@ -47,7 +48,7 @@ function Ltr(char, isGuessed) {
     }
 };
 
-Ltr(char);
+
 console.log("this is the letter.js file");
 
 module.exports = Ltr;
