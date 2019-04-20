@@ -7,12 +7,20 @@ var char = process.argv[2];
 
 function Ltr(char) {
     this.word = 'dave'.split('')
+    const newArray = this.word.map(function(char){
+        return '-'
+    })
+    
     this.char = char;
 
     this.printMatch = function () {
         
         if (this.word.indexOf(char) !== -1) {
             console.log(this.word[this.word.indexOf(char)]);
+            return {
+                char,
+                index: this.word.indexOf(char)
+            }
             // fs.appendFile("hangman.txt", this.char,
 
             //     function (err) {
